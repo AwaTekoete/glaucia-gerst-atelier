@@ -1,0 +1,20 @@
+Anforderungsliste Internet seite
+2026-04-12: arbeitsumgebung für html code-Entwicklung ist visual Studio code
+2026-04-12: code Ursprung von index.html war atelier-Erik-Gerst, soll angepasst werden auf Glaucia-Gerst-atelier.
+Ausnahme block "Auftrag anfragen", dort bleibt während testphase email erik.gerst@hotmail.com. erst nach "Internet seite freischalten" wird im block "auftrag anfragen" email Empfänger auf glauciagerst.atelier@gmail.com umgestellt.
+2026-04-12: der ort "Berlin" soll ersatzlos von internetseite entfernt werden
+2026-04-12: Nutzer soll drei sprachen zur Auswahl haben Brasilianisch / Deusch / Englisch
+2026-04-12: "hero" breich: der übernommen index.html code erzeugt im rechten breich vier geometrische Figuren (kreis / Rechteck / Dreieck und kreuz). Figuren entfernen und dem Slogan "Deine Liebe zu deinem Pet in Aquarell manifestiert." den frei gewordenen Bereich überlassen.
+2026-04-12: "Galerie" breich: die aktuelle bilder bleiben erhalten genau so wie sie aktuell sind, jedoch 
+1) Reihenfolge von Katzenportrait, Hundeportrait, Auftragsarbeit auf neue Reihenfolge Hundeportrait, Auftragsarbeit, Katzenportrait
+2) bei click auf Hundeportrait, Auftragsarbeit, Katzenportrait oder click auf das jeweilige bild, öffnet sich eine "Sub seite" in der dann die weiteren Hundeportrait-, Auftragsarbeit-, Katzenportrait-bilder zu sehen sind. wenn dann Besucher auf ein bild clickt, wird dieses in der maximalen grösse des bildschirmes angezeigt und der besucher kann mit den fingern "REINZOOMEN". schlage einen sinnvollen weg vor wie der Besucher wieder auf die main seite kommen soll.
+2026-04-12: "übermich" bereich: hinzufügen des bildes des Künstlers "about_color_IMG_2904.jpg"
+2026-04-12: "Auftrag anfragen" breich: dort erschein aktuell noch die sätze "Vielen Dank! Deine Anfrage ist angekommen — ich melde mich bald bei dir." und "Etwas hat nicht geklappt. Bitte versuche es nochmal oder schreib mir direkt per E-Mail.". dies sollen nur erscheinen sobald die Nachricht versendet wurde und dann auch mit korrekter Logik bei okay "Vielen Dank! Deine Anfrage ist angekommen — ich melde mich bald bei dir.", bei notokay "Etwas hat nicht geklappt. Bitte versuche es nochmal oder schreib mir direkt per E-Mail."
+2026-04-12: "Direkt erreichen" breich: 
+1) entfernen von "Aufträge Aktuell offen"
+2) hinzufügen link vom Instagram, hinzufügen vom qr code instagram
+2026-04-12: künstler wünscht sich, dass seine internetseite möglichst "glaucia gerst atelier" heisst, ohne komische zusätze wie 234 xyz (ziel ist dass der seiten name vertrauenswürdig erscheint)
+
+
+
+
