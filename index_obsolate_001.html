@@ -158,12 +158,6 @@
     .footer-brand { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--white); }
     .footer-copy { font-family: var(--font-mono); font-size: 10px; color: #555; letter-spacing: 0.08em; }
 
-    /* SPRACHE */
-    .nav-lang { display: flex; align-items: center; gap: 8px; padding: 0 20px; border-left: 1px solid var(--black); }
-    .lang-btn { background: none; border: none; cursor: pointer; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; color: var(--gray-text); padding: 4px 6px; transition: color 0.2s; }
-    .lang-btn:hover { color: var(--black); }
-    .lang-btn.active { color: var(--black); font-weight: 500; }    
-
     /* RESPONSIVE */
     @media (max-width: 680px) {
       nav { padding: 0 20px; grid-template-columns: 1fr auto; }
@@ -189,13 +183,8 @@
       <a href="#ueber">Über mich</a>
       <a href="#kontakt">Kontakt</a>
     </div>
-    <div class="nav-lang">
-      <button class="lang-btn" onclick="setLang('de')">🇩🇪 DE</button>
-      <button class="lang-btn" onclick="setLang('en')">🇬🇧 EN</button>
-      <button class="lang-btn" onclick="setLang('pt')">🇧🇷 PT</button>
-    </div>
     <div class="nav-cta">
-      <a href="#kontakt" id="nav-cta-link">Auftrag anfragen</a>
+      <a href="#kontakt">Auftrag anfragen</a>
     </div>
   </nav>
 
@@ -346,58 +335,5 @@
     });
   </script>
 
-  <script src="translations.js"></script>
-  <script>
-    function setLang(lang) {
-      const t = translations[lang];
-
-      // Nav
-      document.querySelector('a[href="#galerie"]').textContent = t.nav_galerie;
-      document.querySelector('a[href="#ueber"]').textContent = t.nav_ueber;
-      document.querySelector('a[href="#kontakt"]').textContent = t.nav_kontakt;
-      document.getElementById('nav-cta-link').textContent = t.nav_cta;
-
-      // Hero
-      document.querySelector('.hero-eyebrow').textContent = t.hero_eyebrow;
-      document.querySelector('.hero-title').innerHTML = t.hero_title;
-      document.querySelector('.hero-sub').textContent = t.hero_sub;
-
-      // Galerie
-      document.querySelector('.section-label').textContent = t.gallery_label;
-      document.querySelector('.section-sub').textContent = t.gallery_sub;
-
-      // Über mich
-      document.querySelector('.about-content h2').textContent = t.about_title;
-      document.querySelector('.about-content p').textContent = t.about_text;
-
-      // Kontakt Formular
-      document.querySelector('.contact-left .contact-label').textContent = t.contact_label;
-      document.querySelector('input[name="name"]').placeholder = t.contact_name;
-      document.querySelector('input[name="email"]').placeholder = t.contact_email;
-      document.querySelector('input[name="tier"]').placeholder = t.contact_tier;
-      document.querySelector('textarea[name="message"]').placeholder = t.contact_message;
-      document.getElementById('submit-btn').textContent = t.contact_btn;
-
-      // Direkt erreichen
-      document.querySelector('.contact-right .contact-label').textContent = t.direct_label;
-
-      // Footer
-      document.querySelector('.footer-copy').textContent = t.footer_copy;
-
-      // Aktiver Button
-      document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
-
-      // Sprache speichern
-      localStorage.setItem('lang', lang);
-    }
-
-    // Beim Laden gespeicherte Sprache anwenden
-    window.addEventListener('DOMContentLoaded', () => {
-      const saved = localStorage.getItem('lang') || 'de';
-      const btn = document.querySelector(`.lang-btn[onclick="setLang('${saved}')"]`);
-      if (btn) btn.click();
-    });
-  </script>
 </body>
 </html>
