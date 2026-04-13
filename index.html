@@ -321,7 +321,7 @@
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
       btn.disabled = true;
-      btn.textContent = 'Wird gesendet ...';
+      btn.textContent = translations[currentLang].contact_sending;
       ok.style.display = 'none';
       err.style.display = 'none';
 
@@ -332,23 +332,27 @@
           body: new FormData(form)
         });
         if (response.ok) {
+          ok.textContent = translations[currentLang].contact_success;
           ok.style.display = 'block';
           form.reset();
-          btn.textContent = 'Gesendet!';
+          btn.textContent = translations[currentLang].contact_sent;
         } else {
           throw new Error('Fehler');
         }
       } catch {
+        err.textContent = translations[currentLang].contact_error;
         err.style.display = 'block';
         btn.disabled = false;
-        btn.textContent = 'Anfrage senden';
+        btn.textContent = translations[currentLang].contact_btn;
       }
     });
   </script>
 
   <script src="translations.js"></script>
   <script>
+    let currentLang = 'de';
     function setLang(lang) {
+      currentLang = lang;
       const t = translations[lang];
 
       // Nav
