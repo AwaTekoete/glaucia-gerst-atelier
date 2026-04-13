@@ -158,6 +158,19 @@
     .footer-brand { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--white); }
     .footer-copy { font-family: var(--font-mono); font-size: 10px; color: #555; letter-spacing: 0.08em; }
 
+    /* LIGHTBOX */
+    #lightbox-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 200; justify-content: center; align-items: center; }
+    #lightbox-overlay.open { display: flex; }
+    #lightbox-box { background: var(--white); width: 90%; max-width: 900px; max-height: 85vh; overflow-y: auto; padding: 40px; position: relative; }
+    #lightbox-close { position: absolute; top: 16px; right: 16px; background: none; border: none; font-size: 20px; cursor: pointer; color: var(--black); }
+    #lightbox-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    #lightbox-grid img { width: 100%; aspect-ratio: 1; object-fit: cover; cursor: pointer; transition: transform 0.2s; }
+    #lightbox-grid img:hover { transform: scale(1.03); }
+    #lightbox-fullscreen { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 300; justify-content: center; align-items: center; }
+    #lightbox-fullscreen.open { display: flex; }
+    #fullscreen-close { position: absolute; top: 16px; right: 16px; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--white); z-index: 301; }
+    #fullscreen-img { max-width: 95vw; max-height: 95vh; object-fit: contain; touch-action: pinch-zoom; }
+
     /* SPRACHE */
     .nav-lang { display: flex; align-items: center; gap: 8px; padding: 0 20px; border-left: 1px solid var(--black); }
     .lang-btn { background: none; border: none; cursor: pointer; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; color: var(--gray-text); padding: 4px 6px; transition: color 0.2s; }
@@ -213,27 +226,36 @@
 
   <section class="gallery" id="galerie">
     <div class="section-header">
-      <span class="section-label">Ausgewählte Werke</span>
-      <span class="section-sub">Aquarell · Tierportraits</span>
+      <span class="section-label" id="gallery-label">Ausgewählte Werke</span>
+      <span class="section-sub" id="gallery-sub">Aquarell · Tierportraits</span>
     </div>
     <div class="gallery-grid">
-      <div class="gallery-item">
-        <!-- TIPP: Ersetze diesen Block durch: <img src="bild1.jpg" alt="Katzenportrait"> -->
+      <div class="gallery-item" onclick="openGallery('hund')">
+        <img src="images/gallery/Hundeportrait_001_IMG_4156.jpg" alt="Hundeportrait">
+        <div class="gallery-caption" id="gallery-cat1">Hundeportrait</div>
+      </div>
+      <div class="gallery-item" onclick="openGallery('auftrag')">
+        <img src="images/gallery/Auftragsarbeit_001_IMG_4151.jpg" alt="Auftragsarbeit">
+        <div class="gallery-caption" id="gallery-cat2">Auftragsarbeit</div>
+      </div>
+      <div class="gallery-item" onclick="openGallery('katze')">
         <img src="images/gallery/Katzenportrait_001_IMG_4155.jpg" alt="Katzenportrait">
         <div class="gallery-caption" id="gallery-cat3">Katzenportrait</div>
       </div>
-      <div class="gallery-item">
-        <!-- TIPP: Ersetze diesen Block durch: <img src="bild2.jpg" alt="Hundeportrait"> -->
-        <img src="images/gallery/Hundeportrait_002_IMG_4157.jpg" alt="Hundeportrait">
-        <div class="gallery-caption" id="gallery-cat1">Hundeportrait</div>
-      </div>
-      <div class="gallery-item">
-        <!-- TIPP: Ersetze diesen Block durch: <img src="bild3.jpg" alt="Auftragsarbeit"> -->
-        <img src="images/gallery/Auftragsarbeit_002_IMG_4154.jpg" alt="Auftragsarbeit">
-        <div class="gallery-caption" id="gallery-cat2">Auftragsarbeit</div>
-      </div>
     </div>
   </section>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox-overlay" onclick="closeLightbox()">
+    <div id="lightbox-box" onclick="event.stopPropagation()">
+      <button id="lightbox-close" onclick="closeLightbox()">✕</button>
+      <div id="lightbox-grid"></div>
+    </div>
+    <div id="lightbox-fullscreen" onclick="closeFullscreen()">
+      <button id="fullscreen-close" onclick="closeFullscreen()">✕</button>
+      <img id="fullscreen-img" src="" alt="">
+    </div>
+  </div>
 
   <section class="about" id="ueber">
     <div class="about-sidebar">
@@ -350,6 +372,59 @@
 
   <script src="translations.js"></script>
   <script>
+    const galleryImages = {
+      hund: [
+        'images/gallery/Hundeportrait_001_IMG_4156.jpg',
+        'images/gallery/Hundeportrait_002_IMG_4157.jpg',
+        'images/gallery/Hundeportrait_003_IMG_4158.JPG',
+        'images/gallery/Hundeportrait_004_IMG_4160.jpg',
+        'images/gallery/Hundeportrait_005_IMG_4161.jpg'
+      ],
+      auftrag: [
+        'images/gallery/Auftragsarbeit_001_IMG_4151.jpg',
+        'images/gallery/Auftragsarbeit_002_IMG_4154.jpg',
+        'images/gallery/Auftragsarbeit_003_IMG_4162.jpg',
+        'images/gallery/Auftragsarbeit_003_A88884C1-3BCA-4BE0-827F-09447EDC2175.jpg'
+      ],
+      katze: [
+        'images/gallery/Katzenportrait_001_IMG_4155.jpg'
+      ]
+    };
+
+    function openGallery(kategorie) {
+      const images = galleryImages[kategorie];
+      const grid = document.getElementById('lightbox-grid');
+      grid.innerHTML = '';
+      images.forEach(src => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.onclick = () => openFullscreen(src);
+        grid.appendChild(img);
+      });
+      document.getElementById('lightbox-overlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox-overlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function openFullscreen(src) {
+      document.getElementById('fullscreen-img').src = src;
+      document.getElementById('lightbox-fullscreen').classList.add('open');
+    }
+
+    function closeFullscreen() {
+      document.getElementById('lightbox-fullscreen').classList.remove('open');
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeFullscreen();
+        closeLightbox();
+      }
+    });
     let currentLang = 'de';
     function setLang(lang) {
       currentLang = lang;
