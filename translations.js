@@ -8,7 +8,7 @@ const translations = {
     hero_title: "Deine Liebe zu<br>deinem Pet in<br>Aquarell manifestiert.",
     hero_sub: "Originale · Auftragsportraits",
     gallery_label: "Ausgewählte Werke",
-    gallery_sub: "Aquarell · Tierportraits",
+    gallery_sub: "",
     gallery_cat1: "Hundeportrait",
     gallery_cat2: "Auftragsarbeit",
     gallery_cat3: "Katzenportrait",
@@ -32,7 +32,7 @@ const translations = {
     direct_instagram: "Instagram",
     direct_qr: "QR Code",
     location_val: "Deutschland",
-    technique_val: "Ich erkunde die Aquarellmalerei auf konstruktive Weise, durch Schichten, die Dichte, Tiefe und Definition erzeugen – im Gegensatz zur traditionellen Transparenz dieser Technik. Ein Aquarell, das eher aufgebaut als aufgelöst ist. Aquarell auf 100 % Baumwollpapier, mit professionellen Farben.",
+    technique_val: "Ich erkunde die Aquarellmalerei auf konstruktive Weise, durch Schichten, die Dichte, Tiefe und Definition erzeugen – im Gegensatz zur traditionellen Transparenz dieser Technik.<br><br>Ein Aquarell, das eher aufgebaut als aufgelöst ist.<br><br>Aquarell auf 100 % Baumwollpapier, mit professionellen Farben.",
     footer_copy: "© 2026 · Alle Rechte vorbehalten"
   },
   en: {
@@ -44,7 +44,7 @@ const translations = {
     hero_title: "Your love for<br>your pet manifested<br>in watercolor.",
     hero_sub: "Originals · Commission portraits",
     gallery_label: "Selected Works",
-    gallery_sub: "Watercolor · Animal portraits",
+    gallery_sub: "",
     gallery_cat1: "Dog portrait",
     gallery_cat2: "Commission work",
     gallery_cat3: "Cat portrait",
@@ -68,7 +68,7 @@ const translations = {
     direct_instagram: "Instagram",
     direct_qr: "QR Code",
     location_val: "Germany",
-    technique_val: "I explore watercolor in a constructive way, through layers that create density, depth, and definition—contrasting with the technique’s traditional transparency. A watercolor that is more built up than dissolved. Watercolor on 100% cotton paper, using professional-grade paints.",
+    technique_val: "I explore watercolor in a constructive way, through layers that create density, depth, and definition—contrasting with the technique's traditional transparency.<br><br>A watercolor that is more built up than dissolved.<br><br>Watercolor on 100% cotton paper, using professional-grade paints.",
     footer_copy: "© 2026 · All rights reserved"
   },
   pt: {
@@ -80,7 +80,7 @@ const translations = {
     hero_title: "O seu amor pelo<br>seu pet manifestado<br>em aquarela.",
     hero_sub: "Originais · Retratos por encomenda",
     gallery_label: "Obras Selecionadas",
-    gallery_sub: "Aquarela · Retratos de animais",
+    gallery_sub: "",
     gallery_cat1: "Retrato de cachorro",
     gallery_cat2: "Trabalho por encomenda",
     gallery_cat3: "Retrato de gato",
@@ -104,7 +104,7 @@ const translations = {
     direct_instagram: "Instagram",
     direct_qr: "QR Code",
     location_val: "Alemanha",
-    technique_val: "Exploro a aquarela de forma construtiva, através de camadas que criam densidade, profundidade e definição, em contraste com a transparência tradicional da técnica. Uma aquarela mais construída do que dissolvida. Aquarela sobre papel 100% algodão, com tintas profissionais.",
+    technique_val: "Exploro a aquarela de forma construtiva, através de camadas que criam densidade, profundidade e definição, em contraste com a transparência tradicional da técnica.<br><br>Uma aquarela mais construída do que dissolvida.<br><br>Aquarela sobre papel 100% algodão, com tintas profissionais.",
     footer_copy: "© 2026 · Todos os direitos reservados"
   }
 };

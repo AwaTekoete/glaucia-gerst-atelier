@@ -227,7 +227,7 @@
   <section class="gallery" id="galerie">
     <div class="section-header">
       <span class="section-label" id="gallery-label">Ausgewählte Werke</span>
-      <span class="section-sub" id="gallery-sub">Aquarell · Tierportraits</span>
+      <span class="section-sub" id="gallery-sub"></span>
     </div>
     <div class="gallery-grid">
       <div class="gallery-item" onclick="openGallery('hund')">
@@ -257,7 +257,7 @@
     </div>
   </div>
 
-  <section class="about" id="ueber">
+  <section class="about" id="ueber" style="scroll-margin-top: 60px;">
     <div class="about-sidebar">
       <span class="about-sidebar-text">Über mich</span>
     </div>
@@ -464,7 +464,7 @@
       document.getElementById('lbl-location').textContent = t.direct_location;
       document.getElementById('lbl-technique').textContent = t.direct_technique;
       document.getElementById('val-location').textContent = t.location_val;
-      document.getElementById('val-technique').textContent = t.technique_val;
+      document.getElementById('val-technique').innerHTML = t.technique_val;
 
       // Galerie Captions
       document.getElementById('gallery-cat1').textContent = t.gallery_cat1;
