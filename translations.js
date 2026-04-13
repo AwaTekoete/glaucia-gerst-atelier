@@ -32,7 +32,7 @@ const translations = {
     direct_instagram: "Instagram",
     direct_qr: "QR Code",
     location_val: "Deutschland",
-    technique_val: "Aquarell auf Papier",
+    technique_val: "Ich erkunde die Aquarellmalerei auf konstruktive Weise, durch Schichten, die Dichte, Tiefe und Definition erzeugen – im Gegensatz zur traditionellen Transparenz dieser Technik. Ein Aquarell, das eher aufgebaut als aufgelöst ist. Aquarell auf 100 % Baumwollpapier, mit professionellen Farben.",
     footer_copy: "© 2026 · Alle Rechte vorbehalten"
   },
   en: {
@@ -68,7 +68,7 @@ const translations = {
     direct_instagram: "Instagram",
     direct_qr: "QR Code",
     location_val: "Germany",
-    technique_val: "Watercolor on paper",
+    technique_val: "I explore watercolor in a constructive way, through layers that create density, depth, and definition—contrasting with the technique’s traditional transparency. A watercolor that is more built up than dissolved. Watercolor on 100% cotton paper, using professional-grade paints.",
     footer_copy: "© 2026 · All rights reserved"
   },
   pt: {
@@ -104,7 +104,7 @@ const translations = {
     direct_instagram: "Instagram",
     direct_qr: "QR Code",
     location_val: "Alemanha",
-    technique_val: "Aquarela sobre papel",
+    technique_val: "Exploro a aquarela de forma construtiva, através de camadas que criam densidade, profundidade e definição, em contraste com a transparência tradicional da técnica. Uma aquarela mais construída do que dissolvida. Aquarela sobre papel 100% algodão, com tintas profissionais.",
     footer_copy: "© 2026 · Todos os direitos reservados"
   }
 };
