@@ -276,21 +276,21 @@
     <div class="contact-right">
       <span class="contact-label">Direkt erreichen</span>
       <div class="info-block">
-        <div class="lbl">Künstler</div>
+        <div class="lbl" id="lbl-artist">Künstlerin</div>
         <div class="val">Gláucia Gerst</div>
       </div>
       <div class="info-block">
-        <div class="lbl">E-Mail</div>
+        <div class="lbl" id="lbl-email">E-Mail</div>
         <!-- TIPP: Trage hier deine echte E-Mail ein -->
         <div class="val">glauciagerst.atelier@gmail.com</div>
       </div>
       <div class="info-block">
-        <div class="lbl">Standort</div>
-        <div class="val">Deutschland</div>
+        <div class="lbl" id="lbl-location">Standort</div>
+        <div class="val" id="val-location">Deutschland</div>
       </div>
       <div class="info-block">
-        <div class="lbl">Technik</div>
-        <div class="val">Aquarell auf Papier</div>
+        <div class="lbl" id="lbl-technique">Technik</div>
+        <div class="val" id="val-technique">Aquarell auf Papier</div>
       </div>
       <div class="info-block">
         <div class="lbl">Instagram</div>
@@ -380,7 +380,18 @@
 
       // Direkt erreichen
       document.querySelector('.contact-right .contact-label').textContent = t.direct_label;
+      document.getElementById('lbl-artist').textContent = t.direct_artist;
+      document.getElementById('lbl-email').textContent = t.direct_email;
+      document.getElementById('lbl-location').textContent = t.direct_location;
+      document.getElementById('lbl-technique').textContent = t.direct_technique;
+      document.getElementById('val-location').textContent = t.location_val;
+      document.getElementById('val-technique').textContent = t.technique_val;
 
+      // Galerie Captions
+      document.getElementById('gallery-cat1').textContent = t.gallery_cat1;
+      document.getElementById('gallery-cat2').textContent = t.gallery_cat2;
+      document.getElementById('gallery-cat3').textContent = t.gallery_cat3;
+      
       // Footer
       document.querySelector('.footer-copy').textContent = t.footer_copy;
 
