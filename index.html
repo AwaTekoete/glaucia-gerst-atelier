@@ -251,8 +251,7 @@
     </div>
   </section>
 
-  <section class="gallery" id="galerie">
-    <div class="section-header">
+  <section class="gallery" id="galerie" style="scroll-margin-top: 110px;">    <div class="section-header">
       <span class="section-label" id="gallery-label">Ausgewählte Werke</span>
       <span class="section-sub" id="gallery-sub"></span>
     </div>
@@ -284,7 +283,7 @@
     </div>
   </div>
 
-  <section class="about" id="ueber" style="scroll-margin-top: 60px;">
+  <section class="about" id="ueber" style="scroll-margin-top: 110px;">
     <div class="about-sidebar">
       <span class="about-sidebar-text">Über mich</span>
     </div>
@@ -305,7 +304,7 @@
     </div>
   </section>
 
-  <section class="contact" id="kontakt">
+  <section class="contact" id="kontakt" style="scroll-margin-top: 110px;">
     <div class="contact-left">
       <span class="contact-label">Auftrag anfragen</span>
       <form id="kontakt-form">
@@ -473,6 +472,7 @@
       document.querySelector('.section-sub').textContent = t.gallery_sub;
 
       // Über mich
+      document.querySelector('.about-sidebar-text').textContent = t.nav_ueber;
       document.querySelector('.about-content h2').textContent = t.about_title;
       document.querySelector('.about-content p').textContent = t.about_text;
 
