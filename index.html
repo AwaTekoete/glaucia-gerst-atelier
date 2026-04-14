@@ -30,31 +30,35 @@
       line-height: 1.6;
     }
 
-    /* NAVIGATION */
+  /* NAVIGATION */
     nav {
       position: sticky; top: 0; z-index: 100;
       background: var(--white);
       border-bottom: 2px solid var(--black);
-      display: grid;
-      grid-template-columns: auto 1fr auto auto;
-      align-items: stretch;
+    }
+    .nav-row-1 {
+      display: flex; align-items: center; justify-content: space-between;
       height: 60px; padding: 0 40px;
+      border-bottom: 1px solid var(--black);
+    }
+    .nav-row-2 {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 44px; padding: 0 40px;
     }
     .nav-brand {
       display: flex; align-items: center;
       font-family: var(--font-mono); font-size: 12px; font-weight: 500;
       letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--black); border-right: 1px solid var(--black);
-      padding-right: 28px; text-decoration: none;
+      color: var(--black); text-decoration: none;
     }
-    .nav-links { display: flex; align-items: center; padding-left: 28px; gap: 32px; }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
     .nav-links a {
       font-family: var(--font-mono); font-size: 10px;
       letter-spacing: 0.16em; text-transform: uppercase;
       color: var(--gray-text); text-decoration: none; transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--black); }
-    .nav-cta { display: flex; align-items: center; border-left: 1px solid var(--black); padding-left: 28px; }
+    .nav-cta { display: flex; align-items: center; }
     .nav-cta a {
       background: var(--black); color: var(--white);
       font-family: var(--font-mono); font-size: 10px;
@@ -179,14 +183,13 @@
 
     /* RESPONSIVE */
     @media (max-width: 680px) {
-nav { padding: 0 16px; grid-template-columns: auto 1fr auto auto; height: 60px; }
-      .nav-brand { font-size: 10px; padding-right: 12px; white-space: nowrap; }
-      .nav-links { display: flex; padding-left: 12px; gap: 16px; }
+      .nav-row-1 { height: 48px; padding: 0 16px; border-bottom: 1px solid var(--black); }
+      .nav-brand { font-size: 10px; }
+      .nav-row-2 { flex-direction: column; height: auto; padding: 0; }
+      .nav-links { justify-content: space-around; width: 100%; padding: 0 16px; height: 44px; border-bottom: 1px solid var(--black); }
       .nav-links a { font-size: 9px; }
-      .nav-lang { padding: 0 8px; gap: 5px; }
-      .nav-lang .lang-btn { padding: 2px 3px; }
-      .nav-cta { padding-left: 8px; }
-      .nav-cta a { padding: 7px 10px; font-size: 9px; }
+      .nav-cta { width: 100%; }
+      .nav-cta a { display: block; text-align: center; padding: 12px; font-size: 10px; width: 100%; }
       .hero { grid-template-columns: 1fr; }
       .hero-left { padding: 40px 20px; }
       .hero-title { font-size: 28px; }
@@ -210,25 +213,29 @@ nav { padding: 0 16px; grid-template-columns: auto 1fr auto auto; height: 60px; 
 <body>
 
   <nav>
-    <a href="#" class="nav-brand">Gláucia Gerst · Atelier</a>
-    <div class="nav-links">
-      <a href="#galerie">Galerie</a>
-      <a href="#ueber">Über mich</a>
-      <a href="#kontakt">Kontakt</a>
+    <div class="nav-row-1">
+      <a href="#" class="nav-brand">Gláucia Gerst · Atelier</a>
+      <div class="nav-lang">
+        <button class="lang-btn" onclick="setLang('pt')" title="Português">
+          <svg width="28" height="18" viewBox="0 0 28 18" style="display:block;border-radius:2px;border:0.5px solid rgba(0,0,0,0.15)"><rect width="28" height="18" fill="#009C3B"/><polygon points="14,2 26,9 14,16 2,9" fill="#FEDF00"/><circle cx="14" cy="9" r="4" fill="#002776"/><path d="M10.2 7.6 Q14 6 17.8 7.6" stroke="#fff" stroke-width="0.8" fill="none"/></svg>
+        </button>
+        <button class="lang-btn" onclick="setLang('de')" title="Deutsch">
+          <svg width="28" height="18" viewBox="0 0 28 18" style="display:block;border-radius:2px;border:0.5px solid rgba(0,0,0,0.15)"><rect width="28" height="6" fill="#000"/><rect y="6" width="28" height="6" fill="#D00"/><rect y="12" width="28" height="6" fill="#FFCE00"/></svg>
+        </button>
+        <button class="lang-btn" onclick="setLang('en')" title="English">
+          <svg width="28" height="18" viewBox="0 0 28 18" style="display:block;border-radius:2px;border:0.5px solid rgba(0,0,0,0.15)"><rect width="28" height="18" fill="#012169"/><polygon points="0,0 28,18 28,14.5 3.5,0" fill="#fff"/><polygon points="0,3.5 24.5,18 28,18 3.5,0" fill="#C8102E"/><polygon points="28,0 0,18 0,14.5 24.5,0" fill="#fff"/><polygon points="28,3.5 3.5,18 0,18 24.5,0" fill="#C8102E"/><rect x="11" width="6" height="18" fill="#fff"/><rect y="6" width="28" height="6" fill="#fff"/><rect x="12" width="4" height="18" fill="#C8102E"/><rect y="7" width="28" height="4" fill="#C8102E"/></svg>
+        </button>
+      </div>
     </div>
-    <div class="nav-lang">
-    <button class="lang-btn" onclick="setLang('pt')" title="Português">
-        <svg width="28" height="18" viewBox="0 0 28 18" style="display:block;border-radius:2px;border:0.5px solid rgba(0,0,0,0.15)"><rect width="28" height="18" fill="#009C3B"/><polygon points="14,2 26,9 14,16 2,9" fill="#FEDF00"/><circle cx="14" cy="9" r="4" fill="#002776"/><path d="M10.2 7.6 Q14 6 17.8 7.6" stroke="#fff" stroke-width="0.8" fill="none"/></svg>
-      </button>
-      <button class="lang-btn" onclick="setLang('de')" title="Deutsch">
-        <svg width="28" height="18" viewBox="0 0 28 18" style="display:block;border-radius:2px;border:0.5px solid rgba(0,0,0,0.15)"><rect width="28" height="6" fill="#000"/><rect y="6" width="28" height="6" fill="#D00"/><rect y="12" width="28" height="6" fill="#FFCE00"/></svg>
-      </button>
-      <button class="lang-btn" onclick="setLang('en')" title="English">
-        <svg width="28" height="18" viewBox="0 0 28 18" style="display:block;border-radius:2px;border:0.5px solid rgba(0,0,0,0.15)"><rect width="28" height="18" fill="#012169"/><polygon points="0,0 28,18 28,14.5 3.5,0" fill="#fff"/><polygon points="0,3.5 24.5,18 28,18 3.5,0" fill="#C8102E"/><polygon points="28,0 0,18 0,14.5 24.5,0" fill="#fff"/><polygon points="28,3.5 3.5,18 0,18 24.5,0" fill="#C8102E"/><rect x="11" width="6" height="18" fill="#fff"/><rect y="6" width="28" height="6" fill="#fff"/><rect x="12" width="4" height="18" fill="#C8102E"/><rect y="7" width="28" height="4" fill="#C8102E"/></svg>
-      </button>
-    </div>
-    <div class="nav-cta">
-      <a href="#kontakt" id="nav-cta-link">Auftrag anfragen</a>
+    <div class="nav-row-2">
+      <div class="nav-links">
+        <a href="#galerie">Galerie</a>
+        <a href="#ueber">Über mich</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+      <div class="nav-cta">
+        <a href="#kontakt" id="nav-cta-link">Auftrag anfragen</a>
+      </div>
     </div>
   </nav>
 
