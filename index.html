@@ -173,8 +173,10 @@
     #lightbox-fullscreen { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 300; justify-content: center; align-items: center; }
     #lightbox-fullscreen.open { display: flex; }
     #fullscreen-close { position: absolute; top: 16px; right: 16px; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--white); z-index: 301; }
-    #fullscreen-img { max-width: 95vw; max-height: 95vh; object-fit: contain; touch-action: pinch-zoom; }
-
+    #fullscreen-prev { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); background: none; border: none; font-size: 36px; cursor: pointer; color: var(--white); z-index: 301; padding: 16px; }
+    #fullscreen-next { position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: none; border: none; font-size: 36px; cursor: pointer; color: var(--white); z-index: 301; padding: 16px; }
+    #fullscreen-img { max-width: 85vw; max-height: 95vh; object-fit: contain; touch-action: pinch-zoom; }
+    
     /* SPRACHE */
     .nav-lang { display: flex; align-items: center; gap: 8px; padding: 0 20px; border-left: 1px solid var(--black); }
     .lang-btn { background: none; border: none; cursor: pointer; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; color: var(--gray-text); padding: 4px 6px; transition: color 0.2s; }
@@ -277,9 +279,11 @@
       <button id="lightbox-close" onclick="closeLightbox()">✕</button>
       <div id="lightbox-grid"></div>
     </div>
-    <div id="lightbox-fullscreen" onclick="closeFullscreen()">
+    <div id="lightbox-fullscreen">
       <button id="fullscreen-close" onclick="closeFullscreen()">✕</button>
+      <button id="fullscreen-prev" onclick="navigateFullscreen(-1)">&#8592;</button>
       <img id="fullscreen-img" src="" alt="">
+      <button id="fullscreen-next" onclick="navigateFullscreen(1)">&#8594;</button>
     </div>
   </div>
 
@@ -436,6 +440,7 @@
 
     function openGallery(kategorie) {
       const images = galleryImages[kategorie];
+      currentImages = images;
       const grid = document.getElementById('lightbox-grid');
       grid.innerHTML = '';
       images.forEach(src => {
@@ -456,7 +461,12 @@
       document.body.style.overflow = '';
     }
 
+    let currentImages = [];
+    let currentImageIndex = 0;
+    let touchStartX = 0;
+
     function openFullscreen(src) {
+      currentImageIndex = currentImages.indexOf(src);
       document.getElementById('fullscreen-img').src = src;
       document.getElementById('lightbox-fullscreen').classList.add('open');
     }
@@ -464,6 +474,22 @@
     function closeFullscreen() {
       document.getElementById('lightbox-fullscreen').classList.remove('open');
     }
+
+    function navigateFullscreen(direction) {
+      currentImageIndex = (currentImageIndex + direction + currentImages.length) % currentImages.length;
+      document.getElementById('fullscreen-img').src = currentImages[currentImageIndex];
+    }
+
+    document.getElementById('lightbox-fullscreen').addEventListener('touchstart', function(e) {
+      touchStartX = e.touches[0].clientX;
+    });
+
+    document.getElementById('lightbox-fullscreen').addEventListener('touchend', function(e) {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) {
+        navigateFullscreen(diff > 0 ? 1 : -1);
+      }
+    });
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
