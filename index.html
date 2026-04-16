@@ -441,6 +441,9 @@
       images.forEach(src => {
         const img = document.createElement('img');
         img.src = src;
+        if (src.includes('A88884C1')) {
+          img.style.objectPosition = 'top';
+        }
         img.onclick = () => openFullscreen(src);
         grid.appendChild(img);
       });
