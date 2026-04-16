@@ -274,12 +274,12 @@
   </section>
 
   <!-- LIGHTBOX -->
-  <div id="lightbox-overlay" onclick="closeLightbox()">
-    <div id="lightbox-box" onclick="event.stopPropagation()">
+    <div id="lightbox-overlay" onclick="closeLightbox()">
+      <div id="lightbox-box" onclick="event.stopPropagation()">
       <button id="lightbox-close" onclick="closeLightbox()">✕</button>
       <div id="lightbox-grid"></div>
     </div>
-    <div id="lightbox-fullscreen">
+    <div id="lightbox-fullscreen" onclick="event.stopPropagation()">
       <button id="fullscreen-close" onclick="closeFullscreen()">✕</button>
       <button id="fullscreen-prev" onclick="navigateFullscreen(-1)">&#8592;</button>
       <img id="fullscreen-img" src="" alt="">
