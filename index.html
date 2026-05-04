@@ -3,7 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Atelier Gláucia Gerst – Aquarell Tierportraits</title>
+  <title>Tierportrait in Aquarell – Handgemalt nach Foto | Gláucia Gerst Atelier</title>
+  <meta name="description" content="Professionelle Aquarell-Tierportraits nach Foto. Hochwertig, individuell und handgemalt. Jetzt ein einzigartiges Kunstwerk deines Lieblings im Atelier Gláucia Gerst erstellen lassen.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Gláucia Gerst",
+    "jobTitle": "Künstlerin",
+    "url": "https://glauciagerst-atelier.com",
+    "knowsAbout": ["Aquarell","Aquarell Tierportraits","Tierportrait nach Foto","Hunde Aquarell","Katzen Aquarell","Vögel Aquarell"],
+    "sameAs": ["https://www.instagram.com/glauciagerst_atelier"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Atelier Gláucia Gerst",
+    "url": "https://glauciagerst-atelier.com",
+    "sameAs": ["https://www.instagram.com/glauciagerst_atelier"],
+    "description": "Aquarell Tierportraits – handgemalt nach Foto im Atelier Gláucia Gerst."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VisualArtwork",
+    "artform": "Aquarell",
+    "artMedium": "Aquarellfarbe auf Papier",
+    "genre": "Tierportrait",
+    "description": "Individuelle Aquarellportraits von Tieren – handgemalt nach Foto.",
+    "creator": {"@type": "Person", "name": "Gláucia Gerst"},
+    "url": "https://glauciagerst-atelier.com",
+    "keywords": ["Aquarell Tierportrait","Tierportrait nach Foto","Aquarell Hund","Aquarell Katze","Aquarell Vogel"]
+  }
+  </script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=DM+Mono:wght@400;500&display=swap');
 
@@ -245,7 +280,7 @@
     <div class="hero-left">
       <div>
         <div class="hero-eyebrow">Gláucia Gerst · Atelier</div>
-        <h1 class="hero-title">Deine Liebe zu<br>deinem Pet in<br>Aquarell manifestiert.</h1>
+        <h1 class="hero-title" id="hero-title">Deine Liebe zu<br>deinem Pet in<br>Aquarell manifestiert.</h1>
       </div>
       <div class="hero-sub">Originale · Auftragsportraits</div>
     </div>
@@ -259,15 +294,15 @@
     </div>
     <div class="gallery-grid">
       <div class="gallery-item" onclick="openGallery('hund')">
-        <img src="images/gallery/Hundeportrait_002_IMG_4157.jpg" alt="Hundeportrait">
+        <img src="images/gallery/Hundeportrait_002_IMG_4157.jpg" alt="Aquarell Tierportrait Hund – handgemalt von Gláucia Gerst" loading="lazy">
         <div class="gallery-caption" id="gallery-cat1">Hundeportrait</div>
       </div>
       <div class="gallery-item" onclick="openGallery('auftrag')">
-        <img src="images/gallery/Auftragsarbeit_002_IMG_4154.jpg" alt="Auftragsarbeit">
+        <img src="images/gallery/Auftragsarbeit_002_IMG_4154.jpg" alt="Aquarell Tierportrait Auftragsarbeit – handgemalt von Gláucia Gerst" loading="lazy">
         <div class="gallery-caption" id="gallery-cat2">Auftragsarbeit</div>
       </div>
       <div class="gallery-item" onclick="openGallery('katze')">
-        <img src="images/gallery/Katzenportrait_001_IMG_4155.jpg" alt="Katzenportrait">
+        <img src="images/gallery/Katzenportrait_001_IMG_4155.jpg" alt="Aquarell Tierportrait Katze – handgemalt von Gláucia Gerst" loading="lazy">
         <div class="gallery-caption" id="gallery-cat3">Katzenportrait</div>
       </div>
     </div>
@@ -294,7 +329,7 @@
     <div class="about-content">
       <h2>Gláucia Gerst — Aquarellkünstlerin</h2>
       <div class="about-img-wrap" style="display: flex; gap: 32px; align-items: flex-start;">
-        <img src="images/about/about_color_IMG_2904.jpg" alt="Gláucia Gerst" style="width: 160px; height: 200px; object-fit: cover; flex-shrink: 0;">
+        <img src="images/about/about_color_IMG_2904.jpg" alt="Gláucia Gerst – Aquarellkünstlerin" loading="lazy" style="width: 160px; height: 200px; object-fit: cover; flex-shrink: 0;">
         <p>
           Sou artista de aquarela e desenvolvo um trabalho autoral marcado pela intensidade, sensibilidade e expressão. 
           Minha pintura nasce da conexão com a natureza, com os animais e com os vínculos afetivos que fazem parte da nossa história.
@@ -529,7 +564,7 @@
 
       // Hero
       document.querySelector('.hero-eyebrow').textContent = t.hero_eyebrow;
-      document.querySelector('.hero-title').innerHTML = t.hero_title;
+      document.getElementById('.hero-title').innerHTML = t.hero_title;
       document.querySelector('.hero-sub').textContent = t.hero_sub;
 
       // Galerie
