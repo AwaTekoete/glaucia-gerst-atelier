@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AGB | Gláucia Gerst Atelier</title>
+  <style>
+    @font-face {
+      font-family: 'DM Sans';
+      src: url('fonts/dm-sans-400.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'DM Sans';
+      src: url('fonts/dm-sans-500.ttf') format('truetype');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'DM Mono';
+      src: url('fonts/dm-mono-400.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'DM Mono';
+      src: url('fonts/dm-mono-500.ttf') format('truetype');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #111111;
+      --white: #ffffff;
+      --gray-light: #f5f5f5;
+      --gray-mid: #e8e8e8;
+      --gray-text: #888888;
+      --gray-muted: #555555;
+      --font-main: 'DM Sans', sans-serif;
+      --font-mono: 'DM Mono', monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-main);
+      background: var(--white);
+      color: var(--black);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white);
+      border-bottom: 2px solid var(--black);
+      height: 60px;
+      display: flex;
+      align-items: center;
+      padding: 0 40px;
+    }
+    .back-link {
+      font-family: var(--font-mono); font-size: 10px;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--black); text-decoration: none;
+      display: flex; align-items: center; gap: 8px;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--gray-muted); }
+
+    .agb-content {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 60px 40px;
+    }
+    .agb-content h1 {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gray-text);
+      margin-bottom: 40px;
+    }
+    .agb-block {
+      margin-bottom: 32px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--gray-mid);
+    }
+    .agb-block:last-child { border-bottom: none; }
+    .agb-block .lbl {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gray-text);
+      margin-bottom: 8px;
+    }
+    .agb-block .val {
+      font-size: 13px;
+      color: var(--gray-muted);
+      line-height: 1.9;
+    }
+    .agb-block .val a {
+      color: var(--black);
+      text-decoration: none;
+    }
+    .agb-block .val a:hover { text-decoration: underline; }
+
+    footer {
+      background: var(--black);
+      padding: 18px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-brand {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+    .footer-copy {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: #555;
+      letter-spacing: 0.08em;
+    }
+
+    @media (max-width: 680px) {
+      header { padding: 0 20px; }
+      .agb-content { padding: 40px 20px; }
+      footer { flex-direction: column; gap: 8px; text-align: center; padding: 16px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="back-link">← Zurück zur Startseite &nbsp;|&nbsp; Back to main page &nbsp;|&nbsp; Voltar à página inicial</a>
+  </header>
+
+  <main class="agb-content">
+    <h1>Allgemeine Geschäftsbedingungen</h1>
+
+    <div class="agb-block">
+      <div class="lbl">Geltungsbereich</div>
+      <div class="val">
+        Diese AGB gelten für alle Auftragsarbeiten zwischen Gláucia Gerst (nachfolgend "Künstlerin") und dem Auftraggeber.
+      </div>
+    </div>
+
+    <div class="agb-block">
+      <div class="lbl">Auftragsportraits — individuell angefertigte Werke</div>
+      <div class="val">
+        Alle Portraits werden nach individuellen Vorgaben des Auftraggebers (Foto, Wünsche, Format) handgefertigt. Es handelt sich um Einzelstücke im Sinne des § 312g Abs. 2 Nr. 1 BGB. Das gesetzliche Widerrufsrecht erlischt mit Beginn der Produktion, da das Werk speziell nach Kundenvorgaben angefertigt wird.
+      </div>
+    </div>
+
+    <div class="agb-block">
+      <div class="lbl">Zahlungsweise</div>
+      <div class="val">
+        Die konkrete Zahlungsvereinbarung wird individuell per E-Mail zwischen Künstlerin und Auftraggeber getroffen. Üblich ist eine Anzahlung von 50% bei Auftragsbestätigung und 50% bei Lieferung.
+      </div>
+    </div>
+
+    <div class="agb-block">
+      <div class="lbl">Urheberrecht</div>
+      <div class="val">
+        Das Urheberrecht am fertigen Aquarell verbleibt bei der Künstlerin. Der Auftraggeber erhält das Recht zur privaten Nutzung. Eine kommerzielle Nutzung oder Reproduktion ist ohne ausdrückliche schriftliche Genehmigung der Künstlerin nicht gestattet.
+      </div>
+    </div>
+
+    <div class="agb-block">
+      <div class="lbl">Lieferzeit</div>
+      <div class="val">
+        Die Lieferzeit wird individuell je nach Auftragsvolumen und Auftragslage vereinbart und per E-Mail bestätigt.
+      </div>
+    </div>
+
+    <div class="agb-block">
+      <div class="lbl">Reklamationen</div>
+      <div class="val">
+        Bei berechtigten Mängeln wird die Künstlerin eine angemessene Nachbesserung anbieten. Geschmackliche Abweichungen vom Originalfoto sind kein Mangel — jedes Aquarell ist eine künstlerische Interpretation, keine exakte Kopie.
+      </div>
+    </div>
+
+    <div class="agb-block">
+      <div class="lbl">Kontakt</div>
+      <div class="val">
+        Gláucia Gerst<br>
+        [STRASSE HAUSNUMMER]<br>
+        [PLZ ORT]<br>
+        <a href="mailto:glauciagerst.atelier@gmail.com">glauciagerst.atelier@gmail.com</a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <span class="footer-brand">Gláucia Gerst · Atelier</span>
+    <span class="footer-copy">© 2026 · Alle Rechte vorbehalten · <a href="impressum.html" style="color: #aaaaaa; text-decoration: none;">Impressum</a> · <a href="datenschutz.html" style="color: #aaaaaa; text-decoration: none;">Datenschutz</a> · <a href="agb.html" style="color: #aaaaaa; text-decoration: none;">AGB</a></span>
+  </footer>
+
+</body>
+</html>

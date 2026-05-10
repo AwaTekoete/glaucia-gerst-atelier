@@ -350,7 +350,11 @@
         <input class="form-field" type="email" name="email"   placeholder="E-Mail Adresse"                     required />
         <input class="form-field" type="text"  name="tier"    placeholder="Welches Tier soll gemalt werden?"   required />
         <textarea class="form-field"           name="message" placeholder="Deine Nachricht & Wünsche ..."></textarea>
-        <button class="submit-btn" type="submit" id="submit-btn">Anfrage senden</button>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-top: 20px;">
+          <input type="checkbox" id="agb-check" style="margin-top: 3px; cursor: pointer; flex-shrink: 0;">
+          <label for="agb-check" id="contact-hint" style="font-size: 11px; color: var(--gray-text); line-height: 1.7; cursor: pointer;"></label>
+        </div>
+        <button class="submit-btn" type="submit" id="submit-btn" disabled style="margin-top: 16px;">Anfrage senden</button>
       </form>
       <div class="form-message success" id="msg-success">
         Vielen Dank! Deine Anfrage ist angekommen — ich melde mich bald bei dir.
@@ -585,6 +589,7 @@
       document.querySelector('input[name="tier"]').placeholder = t.contact_tier;
       document.querySelector('textarea[name="message"]').placeholder = t.contact_message;
       document.getElementById('submit-btn').textContent = t.contact_btn;
+      document.getElementById('contact-hint').innerHTML = t.contact_hint;
 
       // Direkt erreichen
       document.querySelector('.contact-right .contact-label').textContent = t.direct_label;
@@ -601,7 +606,7 @@
       document.getElementById('gallery-cat3').textContent = t.gallery_cat3;
       
       // Footer
-      document.querySelector('.footer-copy').innerHTML = t.footer_copy + ' · <a href="impressum.html" style="color: #aaaaaa; text-decoration: none;">Impressum</a> · <a href="datenschutz.html" style="color: #aaaaaa; text-decoration: none;">Datenschutz</a>';
+      document.querySelector('.footer-copy').innerHTML = t.footer_copy + ' · <a href="impressum.html" style="color: #aaaaaa; text-decoration: none;">Impressum</a> · <a href="datenschutz.html" style="color: #aaaaaa; text-decoration: none;">Datenschutz</a> · <a href="agb.html" style="color: #aaaaaa; text-decoration: none;">AGB</a>';
 
       // Aktiver Button
       document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
@@ -616,6 +621,11 @@
       const saved = localStorage.getItem('lang') || 'de';
       const btn = document.querySelector(`.lang-btn[onclick="setLang('${saved}')"]`);
       if (btn) btn.click();
+    });
+
+    // AGB Checkbox
+    document.getElementById('agb-check').addEventListener('change', function() {
+      document.getElementById('submit-btn').disabled = !this.checked;
     });
   </script>
 </body>
