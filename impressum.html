@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impressum | Gláucia Gerst Atelier</title>
+  <style>
+    @font-face {
+      font-family: 'DM Sans';
+      src: url('fonts/dm-sans-400.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'DM Sans';
+      src: url('fonts/dm-sans-500.ttf') format('truetype');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'DM Mono';
+      src: url('fonts/dm-mono-400.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'DM Mono';
+      src: url('fonts/dm-mono-500.ttf') format('truetype');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #111111;
+      --white: #ffffff;
+      --gray-light: #f5f5f5;
+      --gray-mid: #e8e8e8;
+      --gray-text: #888888;
+      --gray-muted: #555555;
+      --font-main: 'DM Sans', sans-serif;
+      --font-mono: 'DM Mono', monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-main);
+      background: var(--white);
+      color: var(--black);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white);
+      border-bottom: 2px solid var(--black);
+      height: 60px;
+      display: flex;
+      align-items: center;
+      padding: 0 40px;
+    }
+    .back-link {
+      font-family: var(--font-mono); font-size: 10px;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--black); text-decoration: none;
+      display: flex; align-items: center; gap: 8px;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--gray-muted); }
+
+    /* INHALT */
+    .impressum-content {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 60px 40px;
+    }
+    .impressum-content h1 {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gray-text);
+      margin-bottom: 40px;
+    }
+    .impressum-block {
+      margin-bottom: 32px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--gray-mid);
+    }
+    .impressum-block:last-child {
+      border-bottom: none;
+    }
+    .impressum-block .lbl {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gray-text);
+      margin-bottom: 8px;
+    }
+    .impressum-block .val {
+      font-size: 13px;
+      color: var(--gray-muted);
+      line-height: 1.9;
+    }
+    .impressum-block .val a {
+      color: var(--black);
+      text-decoration: none;
+    }
+    .impressum-block .val a:hover {
+      text-decoration: underline;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--black);
+      padding: 18px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-brand {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+    .footer-copy {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: #555;
+      letter-spacing: 0.08em;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 680px) {
+      header { padding: 0 20px; }
+      .impressum-content { padding: 40px 20px; }
+      footer { flex-direction: column; gap: 8px; text-align: center; padding: 16px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="back-link">← Zurück zur Startseite</a>
+  </header>
+
+  <main class="impressum-content">
+    <h1>Impressum</h1>
+
+    <div class="impressum-block">
+      <div class="lbl">Angaben gemäß § 5 TMG</div>
+      <div class="val">
+        Gláucia Gerst<br>
+        [STRASSE HAUSNUMMER]<br>
+        [PLZ ORT]<br>
+        Deutschland
+      </div>
+    </div>
+
+    <div class="impressum-block">
+      <div class="lbl">Kontakt</div>
+      <div class="val">
+        <a href="mailto:glauciagerst.atelier@gmail.com">glauciagerst.atelier@gmail.com</a>
+      </div>
+    </div>
+
+    <div class="impressum-block">
+      <div class="lbl">Berufsbezeichnung</div>
+      <div class="val">
+        Freiberufliche Künstlerin
+      </div>
+    </div>
+
+    <div class="impressum-block">
+      <div class="lbl">Umsatzsteuer</div>
+      <div class="val">
+        Kleinunternehmerin gemäß § 19 UStG.<br>
+        Es wird keine Umsatzsteuer berechnet.
+      </div>
+    </div>
+
+    <div class="impressum-block">
+      <div class="lbl">Haftung für Inhalte</div>
+      <div class="val">
+        Als Dienstanbieterin bin ich gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG bin ich als Dienstanbieterin nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen.
+      </div>
+    </div>
+
+    <div class="impressum-block">
+      <div class="lbl">Urheberrecht</div>
+      <div class="val">
+        Die durch die Seitenbetreiberin erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung der jeweiligen Autorin.
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <span class="footer-brand">Gláucia Gerst · Atelier</span>
+    <span class="footer-copy">© 2026 · Alle Rechte vorbehalten</span>
+  </footer>
+
+</body>
+</html>

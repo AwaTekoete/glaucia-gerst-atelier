@@ -598,7 +598,7 @@
       document.getElementById('gallery-cat3').textContent = t.gallery_cat3;
       
       // Footer
-      document.querySelector('.footer-copy').textContent = t.footer_copy;
+      document.querySelector('.footer-copy').innerHTML = t.footer_copy + ' · <a href="impressum.html" style="color: #aaaaaa; text-decoration: none;">Impressum</a>';
 
       // Aktiver Button
       document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
