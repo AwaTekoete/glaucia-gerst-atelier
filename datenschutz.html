@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Datenschutz | Gláucia Gerst Atelier</title>
+  <style>
+    @font-face {
+      font-family: 'DM Sans';
+      src: url('fonts/dm-sans-400.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'DM Sans';
+      src: url('fonts/dm-sans-500.ttf') format('truetype');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'DM Mono';
+      src: url('fonts/dm-mono-400.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'DM Mono';
+      src: url('fonts/dm-mono-500.ttf') format('truetype');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #111111;
+      --white: #ffffff;
+      --gray-light: #f5f5f5;
+      --gray-mid: #e8e8e8;
+      --gray-text: #888888;
+      --gray-muted: #555555;
+      --font-main: 'DM Sans', sans-serif;
+      --font-mono: 'DM Mono', monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-main);
+      background: var(--white);
+      color: var(--black);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white);
+      border-bottom: 2px solid var(--black);
+      height: 60px;
+      display: flex;
+      align-items: center;
+      padding: 0 40px;
+    }
+    .back-link {
+      font-family: var(--font-mono); font-size: 10px;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--black); text-decoration: none;
+      display: flex; align-items: center; gap: 8px;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--gray-muted); }
+
+    .datenschutz-content {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 60px 40px;
+    }
+    .datenschutz-content h1 {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gray-text);
+      margin-bottom: 40px;
+    }
+    .datenschutz-block {
+      margin-bottom: 32px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--gray-mid);
+    }
+    .datenschutz-block:last-child { border-bottom: none; }
+    .datenschutz-block .lbl {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gray-text);
+      margin-bottom: 8px;
+    }
+    .datenschutz-block .val {
+      font-size: 13px;
+      color: var(--gray-muted);
+      line-height: 1.9;
+    }
+    .datenschutz-block .val a {
+      color: var(--black);
+      text-decoration: none;
+    }
+    .datenschutz-block .val a:hover { text-decoration: underline; }
+
+    footer {
+      background: var(--black);
+      padding: 18px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-brand {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+    .footer-copy {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: #555;
+      letter-spacing: 0.08em;
+    }
+
+    @media (max-width: 680px) {
+      header { padding: 0 20px; }
+      .datenschutz-content { padding: 40px 20px; }
+      footer { flex-direction: column; gap: 8px; text-align: center; padding: 16px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="back-link">← Zurück zur Startseite</a>
+  </header>
+
+  <main class="datenschutz-content">
+    <h1>Datenschutzerklärung</h1>
+
+    <div class="datenschutz-block">
+      <div class="lbl">Verantwortliche Person</div>
+      <div class="val">
+        Gláucia Gerst<br>
+        [STRASSE HAUSNUMMER]<br>
+        [PLZ ORT]<br>
+        E-Mail: <a href="mailto:glauciagerst.atelier@gmail.com">glauciagerst.atelier@gmail.com</a>
+      </div>
+    </div>
+
+    <div class="datenschutz-block">
+      <div class="lbl">Hosting</div>
+      <div class="val">
+        Diese Website wird über Cloudflare Pages (Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, USA) gehostet. Beim Aufruf der Website werden automatisch Logfiles erstellt die folgende Daten enthalten können: IP-Adresse, Datum und Uhrzeit, aufgerufene Seite, Browsertyp. Diese Daten werden ausschließlich zur technischen Bereitstellung der Website verwendet. Cloudflare ist nach dem EU-US Data Privacy Framework zertifiziert. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.
+      </div>
+    </div>
+
+    <div class="datenschutz-block">
+      <div class="lbl">Kontaktformular</div>
+      <div class="val">
+        Das Kontaktformular wird über Web3Forms (Hemito Digital, EU-Server) betrieben. Eingegebene Daten (Name, E-Mail, Nachricht) werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet und nicht gespeichert oder weitergegeben. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO.
+      </div>
+    </div>
+
+    <div class="datenschutz-block">
+      <div class="lbl">Google Analytics</div>
+      <div class="val">
+        Diese Website verwendet Google Analytics (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland). Dabei werden Nutzungsdaten wie IP-Adresse, Seitenaufrufe und Verweildauer erfasst. Die IP-Adresse wird anonymisiert. Die Daten werden auf Servern von Google in den USA gespeichert. Google ist nach dem EU-US Data Privacy Framework zertifiziert. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO. Sie können der Erfassung widersprechen unter: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">tools.google.com/dlpage/gaoptout</a>
+      </div>
+    </div>
+
+    <div class="datenschutz-block">
+      <div class="lbl">Instagram</div>
+      <div class="val">
+        Diese Website enthält einen Link zum Instagram-Profil (@glauciagerst_atelier). Beim Klick auf den Link verlassen Sie diese Website und werden zu Instagram (Meta Platforms Ireland Ltd.) weitergeleitet. Es werden keine Daten vor dem Klick übertragen. Für die Datenschutzpraktiken von Instagram gilt die Datenschutzrichtlinie von Meta.
+      </div>
+    </div>
+
+    <div class="datenschutz-block">
+      <div class="lbl">Ihre Rechte</div>
+      <div class="val">
+        Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung Ihrer personenbezogenen Daten sowie das Recht auf Datenübertragbarkeit und Widerspruch. Wenden Sie sich dazu an: <a href="mailto:glauciagerst.atelier@gmail.com">glauciagerst.atelier@gmail.com</a>
+      </div>
+    </div>
+
+    <div class="datenschutz-block">
+      <div class="lbl">Beschwerderecht</div>
+      <div class="val">
+        Sie haben das Recht, sich bei einer Datenschutzaufsichtsbehörde zu beschweren. Zuständig ist der Landesbeauftragte für Datenschutz des jeweiligen Bundeslandes.
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <span class="footer-brand">Gláucia Gerst · Atelier</span>
+    <span class="footer-copy">© 2026 · Alle Rechte vorbehalten · <a href="impressum.html" style="color: #aaaaaa; text-decoration: none;">Impressum</a> · <a href="datenschutz.html" style="color: #aaaaaa; text-decoration: none;">Datenschutz</a></span>
+  </footer>
+
+</body>
+</html>
